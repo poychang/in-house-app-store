@@ -1,0 +1,12 @@
+[
+  {
+    "enable": true,
+    "platform": "apple",
+    "appname": "Provenance",
+    "appicon": "img/icon.png",
+    "version": "V0.00",
+    "deviceos": "iOS 8.0 以上",
+    "releasedate": "2017/01/13",
+    "downloadlink": "itms-services://?action=download-manifest&url=https://InHouseAppStore.azurewebsites.net/app/Provenance/Provenance-Release.plist"
+  }
+]

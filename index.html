@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>In House App Store</title>
+    <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="lib/mixitup/build/jquery.mixitup.min.js"></script>
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/poychang.qrcode.min.js"></script>
+</head>
+
+<body>
+    <div class="controls">
+        <H2>In House App Store</H2>
+        <label>選擇系統平台：</label>
+        <button class="filter" data-filter="all">All</button>
+        <button class="filter" data-filter=".apple">Apple</button>
+        <button class="filter" data-filter=".android">Android</button>
+        <a href="old.html"><button class="filter">舊版入口</button></a>
+
+        <!--<label>Sort:</label>
+        <button class="sort" data-sort="myorder:asc">Asc</button>
+        <button class="sort" data-sort="myorder:desc">Desc</button>-->
+    </div>
+    <div id="Container" class="container" ng-controller="appStore as ctrl">
+        <repeat-item-directive ng-repeat="item in ctrl.data track by $index" ng-if="item.enable" class="mix {{item.platform}}" data-myorder="APP">
+            <div class="panel">
+                <!-- Default panel contents -->
+                <div class="panel-heading">
+                    <img ng-src={{item.appicon}} alt="" class="img-rounded panel-img">
+                    <span>{{item.appname}}</span>
+                </div>
+                <!--<div class="panel-body">簡述</div>-->
+                <ul class="list-group">
+                    <li class="list-group-item" title="版本">
+                        <i class="fa fa-info-circle"></i>{{item.version}}</li>
+                    <li class="list-group-item" title="系統版本">
+                        <i class="fa fa-{{item.platform}}"></i>{{item.deviceos}}</li>
+                    <li class="list-group-item" title="更新時間版本">
+                        <i class="fa fa-calendar-o"></i>{{item.releasedate}}</li>
+                    <li class="list-group-item btn" title="下載">
+                        <a ng-href={{item.downloadlink}}>
+                            <i class="fa fa-cloud-download fa-2x"></i></a>
+                    </li>
+                </ul>
+            </div>
+    </div>
+
+    <div class="gap"></div>
+    <div class="gap"></div>
+    </div>
+</body>
+
+</html>
